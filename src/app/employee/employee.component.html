@@ -1,0 +1,63 @@
+<style>
+.error{
+    color: red;
+}
+
+</style>
+
+<div class="container">
+    <h2>EMPLOYEES</h2>
+    <hr>
+    <div class="form-horizontal" >
+            
+            <div class="form-group">
+                <label for="firstName" class="col-sm-3 control-label">Employee Id :</label>
+                <div class="col-sm-3">
+                    <input type="text" name="f1" id="f1" [(ngModel)]="eid" class="form-control" #f1="ngModel" required>
+    
+                    <span class="error" *ngIf="f1.invalid && f1.dirty">Please enter Employee id.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Employee Name :</label>
+                <div class="col-sm-3">
+                    <input type="text" name="f2" id="f2" [(ngModel)]="ename" placeholder="Name" class="form-control" #f2="ngModel" required>
+                    <span class="error" *ngIf="f2.invalid && f2.dirty">Please enter Employee Name.</span>
+                </div>
+    
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Department :</label>
+                <div class="col-sm-3">
+                    <input type="text" name="f2" id="f2" [(ngModel)]="did" placeholder="Department" class="form-control" #f2="ngModel" required>
+                    <span class="error" *ngIf="f2.invalid && f2.dirty">Please enter Dept.</span>
+                </div>
+    
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-3">
+                        <input type="button" (click)="ListOfEmployees()" value="Get Employees"> 
+                        <input type="button" (click)="addEmployee()" value="Add Employee"> 
+                        <input type="button" (click)="removeEmployee()" value="Remove Employees"> 
+                        <input type="button" (click)="selectEmployee()" value="Select Employee">
+                        <input type="button" (click)="updateEmployee()" value="Update Employee">
+                </div>
+            </div>
+            <br>
+           
+        </div>
+    
+<table width="450px" class="table">
+    <tr>
+        <th>Emp No</th>
+        <th>Emp Name</th>
+        <th>Dept No</th>
+    </tr>
+<tr *ngFor="let item of Lemp">
+<td>{{item.empno}}</td>
+<td>{{item.ename}}</td>
+<td>{{item.deptno}}</td>
+</tr>
+
+</table>
+</div>
