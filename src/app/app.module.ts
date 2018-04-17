@@ -19,6 +19,7 @@ import {MainComponent} from './main.component';
 import { HomeComponent } from './home/home.component';
 import { DeptComponent } from './dept/dept.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes:Routes=[
 {path:'',component:HomeComponent},
@@ -43,7 +44,8 @@ const appRoutes:Routes=[
     MainComponent,
     HomeComponent,
     DeptComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,BsDatepickerModule.forRoot(),
