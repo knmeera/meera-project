@@ -1,0 +1,25 @@
+
+
+<style>
+
+    .error{
+        color:red;
+    }
+</style>
+
+<form [formGroup]="studentForm" >
+<div>
+First Name : <input type="text" formControlName="fname" >
+<span class="error"  *ngIf="studentForm.controls.fname.invalid&& studentForm.controls.fname.dirty">Enter first name</span>
+<br><br>
+Last Name : <input type="text" formControlName="lname">
+<span class="error"  *ngIf="studentForm.controls.lname.invalid">Enter Last Name</span> <br><br>
+City : <input type="text" formControlName="city" >
+<span class="error" *ngIf="studentForm.controls.city.invalid" >City name should be more than 3 characters and less than 10 characters</span>
+<br>
+Pincode : <input type="text" formControlName="pincode" >
+<span class="error" *ngIf="studentForm.controls.pincode.invalid">Enter Valid pincode</span>
+
+</div>
+
+</form>

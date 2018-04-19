@@ -1,0 +1,102 @@
+<div class="container">
+    <form class="form-horizontal" role="form">
+        <h2>Registration Form</h2>
+        <div class="form-group"[class.has-error]="f1.invalid && f1.touched">
+            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" #f1="ngModel" id="f1" name="f1" [(ngModel)]="fullName"   class="form-control" required >
+                <span class="help-block" *ngIf="f1.invalid && f1.touched" >Please enter full name.</span>
+            </div>
+        </div>
+        <div class="form-group" [class.has-error]="txtemail.invalid&&(txtemail.dirty || txtemail.touched)">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="text" id="txtemail" name="txteamil" placeholder="Enter email id"  [(ngModel)]="email"  class="form-control" #txtemail="ngModel" email>
+                <span  class="help-block" *ngIf="txtemail.invalid&&(txtemail.dirty || txtemail.touched)" >Please Enter valid E-mail id </span>
+            </div>
+        </div>
+        <div class="form-group" [class.has-error]="txtpwd.invalid&&(txtpwd.dirty ||txtpwd.touched)" >
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="text" id="txtpwd" name="txtpwd"   placeholder="Password" class="form-control" [(ngModel)]="password" #txtpwd="ngModel" required maxlength="10" minlength="3" >
+                <span class="help-block" *ngIf="txtpwd.invalid&&txtpwd.dirty" >Password should be more than 3 charates and less than 10 characters. </span>
+            </div>
+        </div>
+        <div class="form-group"[class.has-error]="txtdob.invalid&&(txtdob.touched||txtdob.dirty)">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="text" bsDatepicker id="txtdob" name="txtdob" #txtdob="ngModel" [(ngModel)]="dateOfBirth" class="form-control" required>
+            <span class="help-block" *ngIf="txtdob.invalid&&(txtdob.touched||txtdob.dirty)">Please Enter Date of Birth</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <select id="country" class="form-control">
+                    <option>Afghanistan</option>
+                    <option>Bahamas</option>
+                    <option>Cambodia</option>
+                    <option>Denmark</option>
+                    <option>Ecuador</option>
+                    <option>Fiji</option>
+                    <option>Gabon</option>
+                    <option>Haiti</option>
+                    <option>india</option>
+                </select>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group" [class.has-error]="rgender.invalid && (rgender.touched||rgender.dirty)">
+            <label class="control-label col-sm-3">Gender</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" required name="gender" #rgender="ngModel" [(ngModel)]="userGender" value="Female">Female
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" required  name="gender" #rgender="ngModel" [(ngModel)]="userGender" value="Male">Male
+                        </label>
+                    </div>
+
+                </div>
+                <span class="help-block" *ngIf="rgender.invalid && (rgender.touched||rgender.dirty)" >Please Select Gender</span>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Known Languages</label>
+            <div class="col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="teluguCheckbox" value="Low calorie">Telugu
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="hindiCheckbox" value="Low salt">Hindi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="englishChenckbox" value="Low salt">English
+                    </label>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">I accept <a href="#">terms</a>
+                    </label>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+    </form> <!-- /form -->
+</div> <!-- ./container -->
